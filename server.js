@@ -3,7 +3,7 @@ const app = express()
 
 
 
-const port = 3333;
+const port = process.env.PORT ||  3333;
 
 app.use(express.static("frontend"))
 

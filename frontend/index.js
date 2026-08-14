@@ -38,3 +38,14 @@ const random = async()=>{
 }
 document.getElementById("change").addEventListener("click",random);
 
+const leet =async ()=>{
+    var usename = document.getElementById("in").value()
+    const url = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`)
+    const data = url.json()
+    document.getElementById("tps").innerText = "Total Problems Solved" + data.solvedProblem;
+    document.getElementById("eps").innerText = "Total Problems Solved" + data.easySolved;
+    document.getElementById("mps").innerText = "Total Problems Solved" + data.mediumSolved;
+    document.getElementById("hps").innerText = "Total Problems Solved" + data.hardSolved;
+}
+
+document.getElementById("dt").addEventListener("submit",leet);

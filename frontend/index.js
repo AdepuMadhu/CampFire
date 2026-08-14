@@ -1,3 +1,5 @@
+
+
 const users = [
     {
         "name" : "Jhon Doe",
@@ -25,4 +27,14 @@ const toggleuser = ()=>{
 }
 
 document.getElementById("toggle").addEventListener("click",toggleuser);
+
+const random = async()=>{
+    const u = await fetch('https://randomuser.me/api')
+    const user = await u.json();
+    document.getElementById("im").src = user.results[0].picture.large;
+    document.getElementById("name").innerText = user.results[0].name.title+ " "+user.results[0].name.first+" "+user.results[0].name.last;
+    document.getElementById("gender").innerText = user.results[0].gender;
+    console.log(user)
+}
+document.getElementById("change").addEventListener("click",random);
 
